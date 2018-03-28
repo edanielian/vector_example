@@ -98,7 +98,7 @@ void vector_t::pop_back()
 	size_--;
 	if (capacity_>=size_) 
 	{
-		capacity_==size_;
+		capacity_=size_;
 		int*temp=new int[capacity_];
 		for (int i=0; i<size_; i++)
 			temp[i] =elements_[i];
