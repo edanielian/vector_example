@@ -64,7 +64,7 @@ void vector_t::push_back(int value)
 {
 	if(size_==0)
 	{
-		capacity_=2;
+		capacity_=1;
 		elements_=new int[capacity_];
 		elements_[size_++]=value;
 		return;
