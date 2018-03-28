@@ -35,13 +35,10 @@ bool vector_t::operator ==(vector_t const & other) const
 	//равны, когда равны соотвутствующие элементы и размер size_
 	if(size_==other.size())
 	{
-		if(size_!=0)
-		{
-		   for(int i=0; i<size_; i++)
-			if(elements_[i]!=other[i])
-				return false;
-		}
-	        else return true; 
+	   for(int i=0; i<size_; i++)
+		if(elements_[i]!=other[i])
+			return false;
+	   return true; 
 	}
 	return false;
 }
