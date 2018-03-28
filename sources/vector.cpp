@@ -70,6 +70,8 @@ void vector_t::push_back(int value)
 		capacity_=2;
 		elements_=new int[capacity_];
 		elements_[size_++]=value;
+		return;
+	}
 	if(capacity_==size_)
 	{
 		int*temp=new int[capacity_*2];
