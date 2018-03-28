@@ -95,7 +95,7 @@ void vector_t::pop_back()
 	if (size_==1) 
 	{
 		size_=0; 
-		capacity_=0;
+		capacity_=1;
 		elements_=nullptr;
 		return;
 	}
