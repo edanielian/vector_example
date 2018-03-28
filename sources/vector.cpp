@@ -89,8 +89,8 @@ void vector_t::pop_back()
 	if (size_==1) 
 	{
 		size_=0; 
-		capacity_=1;//тк в методе push_back() при равенстве size_ и capacity_  выполняется capacity*=2, 
-		            //в случае неравенства по логике capacity_>size_  
+		capacity_=0;
+		elements_=nullptr;
 		return;
 	}
 	size_--;
