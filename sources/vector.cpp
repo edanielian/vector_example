@@ -67,12 +67,12 @@ void vector_t::push_back(int value)
 {
 	if(capacity_==size_)
 	{
-		int*temp=new int[capacity_*2];
+		int*temp=new int[capacity_+1];
 		for(int i=0; i<size_; i++)
 			temp[i]=elements_[i];
 		temp[size_]=value;
 		size_++;
-		capacity_*=2;
+		capacity_++;
 		delete[]elements_;
 		elements_=new int[capacity_];
 		for(int i=0; i<size_; i++)
@@ -96,10 +96,10 @@ void vector_t::pop_back()
 		return;
 	}
 	size_--;
-	if (capacity_>=(4*size_)) //если памяти выделено слишком много, то логично урезать ее, чтобы не занимать место
+	if (capacity_>=size_) 
 	{
-		int*temp=new int[capacity_/2];
-		capacity_/=2;
+		capacity_==size_;
+		int*temp=new int[capacity_];
 		for (int i=0; i<size_; i++)
 			temp[i] =elements_[i];
 		delete[]elements_;
