@@ -22,7 +22,11 @@ vector_t::vector_t(vector_t const & other)
 vector_t & vector_t::operator =(vector_t const & other)
 {
 	delete[]elements_;
-	vector_t(other);
+	capacity_=other.capacity();
+	size_=other.size();
+	elements_=new int[capacity_];
+	for(int i=0; i<size_; i++)
+		elements_[i]=other[i];
 	return *this;
 }
 
@@ -103,13 +107,11 @@ void vector_t::pop_back()
 
 int & vector_t::operator [](std::size_t index)
 {
-	if(elements_==nullptr) return elements_;//чтобы не было ошибки
 	return elements_[index];
 }
 
 int vector_t::operator [](std::size_t index) const
 {
-	if(elements_==nullptr) return 0;//чтобы не было ошибки
 	return elements_[index];
 }
 
