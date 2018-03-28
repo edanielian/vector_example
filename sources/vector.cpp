@@ -3,7 +3,7 @@
 //
 #include "vector.hpp"
 
-vector_t::vector_t() : elements_{nullptr}, size_{0}, capacity_{0}
+vector_t::vector_t()
 {
 	elements_=nullptr;
 	size_=0;
@@ -35,10 +35,13 @@ bool vector_t::operator ==(vector_t const & other) const
 	//равны, когда равны соотвутствующие элементы и размер size_
 	if(size_==other.size())
 		if(size_!=0)
+		{
 		   for(int i=0; i<size_; i++)
 			if(elements_[i]!=other[i])
 				return false;
-	return true;
+		}
+	        else return true; 
+	return false;
 }
 
 vector_t::~vector_t()
